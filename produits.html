@@ -206,7 +206,59 @@
             </div>
         </div>
     </section>
+  <script>
+        function showOrderForm(productName) {
+            const formHtml = `
+                <div class="modal fade" id="orderModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Commander ${productName}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="orderForm">
+                                    <div class="form-group">
+                                        <label for="quantity">Quantité</label>
+                                        <input type="number" class="form-control" id="quantity" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Nom</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city">Ville</label>
+                                        <input type="text" class="form-control" id="city" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Numéro de Téléphone</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="deliveryDate">Date de Livraison</label>
+                                        <input type="date" class="form-control" id="deliveryDate" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Commander</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', formHtml);
+            $('#orderModal').modal('show');
 
+            $('#orderForm').on('submit', function(e) {
+                e.preventDefault();
+                // Logique pour traiter la commande
+                alert('Commande passée avec succès !');
+                $('#orderModal').modal('hide');
+                $(this).closest('.modal').remove(); // Supprime le modal après la soumission
+            });
+        }
+    </script>
     <footer>
         <div class="container">
             <div class="footer-nav">
