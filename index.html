@@ -638,5 +638,46 @@ border-radius: 20%;
             });
         });
     </script>
+     <script>
+        // Function to update the active state of navbar links
+        function setActiveNav() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+    
+            // Add scroll event listener
+            window.addEventListener('scroll', () => {
+                let currentSection = '';
+    
+                // Check which section is in view
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100; // Adjust offset for navbar height
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSection = section.id;
+                    }
+                });
+    
+                // Update active class on navbar links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(currentSection)) {
+                        link.classList.add('active');
+                    }
+                });
+    
+                // Handle the top of the page (Home link)
+                if (window.scrollY < 100) { // Adjust this value if needed
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    document.querySelector('.nav-link[data-section="home"]').classList.add('active');
+                }
+            });
+    
+            // Trigger the scroll event on page load
+            window.dispatchEvent(new Event('scroll'));
+        }
+    
+        // Call the function
+        setActiveNav();
+    </script>
 </body>
 </html>
