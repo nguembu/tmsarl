@@ -16,251 +16,202 @@
 
    <style> 
   
-  .caroussel-header{
-      text-align: center;
-      padding: 1rem;
-  }
-  .carousel-item img {
-  height: 620px;
-  object-fit: cover;
-  border-radius: 5%;
-  }
-  footer .footer-nav ul li a:hover {
-    color: #fff;
-}
-  #featured-products {
-    padding: 50px 0;
-    background: #fff;
-}
-.container-box {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-.card {
-             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-              transition: transform 0.3s, box-shadow 0.3s;
-              margin: 3% 2% 5%;
-         }
-
-         .card:hover {
-             transform: translateY(-10px);
-             box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-         }
- 
-  .social-media a {
-    margin: 0 10px;
-}
-footer .social-media i {
-    margin: 0 10px;
-    transition: transform 0.3s;
-}
-
-footer .social-media i:hover {
-    transform: scale(1.2);
-}
-
-      .text_1{
-          padding: 3.5rem;
-      }
-      .text_2{
-          padding: 3.5rem;
-      }
-      .tba1{
-       padding: 3% 7%;   
-      }
-      .tba2{
-       padding: 3% 7%;   
-      }
-      .social {
-    /* padding: 15px 0; */
-    /* padding: 0 18px; */
-    /* margin-left:0 20px; */
-    margin:3.5rem; 
-    
-}
-.social a{
-    /* padding: 15px 0; */
-    /* padding: 0 18px; */
-    /* margin-left:0 20px; */
-    margin:0 10px; 
-    
-}
-footer .social i {
-    margin: 0 10px;
-    transition: transform 0.3s;
-}
-
-footer .social i:hover {
-    transform: scale(1.2);
-}
-      .lead{
-          /* padding: 3% 7%; */
-          margin: 3% 17%;
-      }
-      .hero-section {
-            background: linear-gradient(135deg, #8efeff, #8ec7ff);
-            color: #000;
-            text-align: center;
-            padding: 100px 20px; 
-        } 
-        .cta-button {
-            margin-top: 20px;
+  :root {
+            --pink: #E91E63;
+            --night-blue: #1A237E;
+            --white: #FFFFFF;
         }
-        /* .services-section img {
-            max-width: 100%;
-            border-radius: 15px;
-        } */
-        .team-section img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--night-blue);
+        }
+
+        /* Navbar Styles */
+            .navbar {
+                padding: 15px 0;
+                transition: all 0.3s ease;
+            }
+
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--white) !important;
+            }
+
+            .navbar-brand img {
+                border-radius: 50%;
+                transition: transform 0.3s;
+            }
+
+            .navbar-brand:hover img {
+                transform: rotate(360deg);
+            }
+
+            .nav-link {
+                color: var(--white) !important;
+                font-weight: 500;
+                margin: 0 10px;
+                position: relative;
+                transition: color 0.3s;
+            }
+
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                background: var(--white);
+                bottom: -5px;
+                left: 0;
+                transition: width 0.3s;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
+            }
+
+            .nav-link.active {
+                color: var(--pink) !important;
+            }
+
+            /* Sticky Navbar */
+            .navbar.fixed-top {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+                        .nav-link.active {
+                color: var(--pink) !important;
+                font-weight: 600;
+                position: relative;
+            }
+
+            .nav-link.active::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: var(--pink);
+                bottom: -5px;
+                left: 0;
+            }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--night-blue), var(--pink));
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .hero-section .lead {
+            font-size: 1.25rem;
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            background-color: var(--pink);
+            border: none;
+            padding: 10px 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--night-blue);
+        }
+
+        .services-section, .mission-section, .team-section, .contact-section, .partners-section {
+            padding: 60px 0;
+        }
+
+        .services-section h2, .mission-section h1, .team-section h2, .contact-section h1, .partners-section h3 {
+            color: var(--night-blue);
+            font-weight: 700;
+        }
+
+        .mission-section .buttons .learn-more {
+            background-color: var(--night-blue);
+            color: var(--white);
+        }
+
+        .mission-section .buttons .contact-us {
+            background-color: var(--white);
+            color: var(--night-blue);
+            border: 2px solid var(--night-blue);
         }
 
         .contact-section {
-            background-color:#1b0153;
-            padding: 40px 20px; 
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 2%;
+            background-color: var(--night-blue);
+            color: var(--white);
         }
-        .contact-section h1 {
-            color: #fff;
-            font-size: 2.5em;
-            margin: 0;
-        }
-        .contact-section p {
-            color: #fff;
-            margin: 20px 0;
-            font-size: 1.2em;
-        }
+
         .contact-section a {
-            color: white;
-            text-decoration: none;
+            color: var(--pink);
         }
-        .contact-section .social-links a {
-            display: inline-block;
-            margin: 10px;
-        }
-        /* .footer {
-            background-color: #E6F0FF;
-            color: black;
+
+        .footer {
+            background-color: var(--night-blue);
+            color: var(--white);
             padding: 20px 0;
-            text-align: center; 
-        }*/
+        }
+
         .footer a {
-            margin: 0 15px;
-            color: black;
+            color: var(--white);
             text-decoration: none;
-            font-weight: bold;
-        }
-        .footer p {
-            margin: 10px 0 0;
-            font-size: 0.9em;
-        }
-
-        .mission-section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-        .mission-section h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #1E0061;
-            text-align: center;
-        }
-        .mission-section p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .mission-section .buttons {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .mission-section .buttons a {
-            display: inline-block;
-            padding: 10px 20px;
             margin: 0 10px;
-            font-size: 1em;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
-        }
-        .mission-section .buttons .learn-more {
-            background-color: #208dd8;
-            text-align: center;
-        }
-        .mission-section .buttons .contact-us {
-            background-color: #FFFFFF;
-            color: #1E0061;
-            border: 1px solid #1E0061;
-            text-align: center;
-        }
-        .mission-section .login {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .mission-section .login a {
-            color: #1E0061;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
         }
 
-        .logo-img{
-            border-radius: 50%;
+        .footer a:hover {
+            color: var(--pink);
         }
 
-       .header {
-            background-image: url('../img1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            position: relative;
+        .social-media a {
+            color: var(--white);
+            margin: 0 10px;
+            transition: color 0.3s;
         }
 
-        .header-content {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
+        .social-media a:hover {
+            color: var(--pink);
         }
 
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .header-content p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .header-content .btn {
-            font-size: 1rem;
-            padding: 10px 20px;
-            border-radius: 5px;
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+            border-radius: 5%;
         }
 
+        .partners img {
+            width: 120px;
+            height: auto;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .partners img:hover {
+            transform: scale(1.1);
         .partners img{
 width: 90px;
 height: 80px;
 border-radius: 20%;
 
-  }
-
-  .partners{
-      /* padding: 7% 15% 9%; */
-      padding: 3.5rem;
-      margin: 3% 7% 5%;
-      text-align: center;
   }
 
     </style>
