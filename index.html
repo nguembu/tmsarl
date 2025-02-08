@@ -217,27 +217,41 @@ border-radius: 20%;
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img class="logo-img" src="Images/logo1.png" alt="Logo" width="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link btn btn-outline-secondary" href="#">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-secondary" href="#presentation">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-secondary" href="#services">Services</a></li>
-                     <li class="nav-item"><a class="nav-link btn btn-outline-secondary" href="#partenaires">Partenaires </a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-secondary" href="#contact">Contactez-nous</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: linear-gradient(135deg, var(--night-blue), var(--pink));">
+    <div class="container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="Images/LogoTest.webp" alt="Logo" width="50" class="d-inline-block align-top">
+            <span class="ms-2" style="font-weight: 600;">TM SARL</span>
+        </a>
 
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active"  href="#header-section">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#presentation">À propos de nous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projets">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contactez-nous</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <!-- Hero Section -->
     <header class="hero-section">
         <div class="container">
