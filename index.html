@@ -13,7 +13,7 @@
     <script defer src="https://use.fontawesome.com/releases/v6.4.2/js/all.js"></script>
 
     <style>
-        :root {
+         :root {
             --pink: #E91E63;
             --night-blue: #1A237E;
             --white: #FFFFFF;
@@ -25,32 +25,74 @@
         }
 
         /* Navbar Styles */
-        .navbar {
-            padding: 15px 0;
-            transition: all 0.3s ease;
-            background: linear-gradient(135deg, var(--night-blue), var(--pink));
-        }
+            .navbar {
+                padding: 15px 0;
+                transition: all 0.3s ease;
+            }
 
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--white) !important;
-        }
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--white) !important;
+            }
 
-        .nav-link {
-            color: var(--white) !important;
-            font-weight: 500;
-            margin: 0 10px;
-            position: relative;
-            transition: color 0.3s;
-        }
+            .navbar-brand img {
+                border-radius: 50%;
+                transition: transform 0.3s;
+            }
 
-        .nav-link.active {
-            color: var(--pink) !important;
-            font-weight: 600;
-        }
+            .navbar-brand:hover img {
+                transform: rotate(360deg);
+            }
+
+            .nav-link {
+                color: var(--white) !important;
+                font-weight: 500;
+                margin: 0 10px;
+                position: relative;
+                transition: color 0.3s;
+            }
+
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                background: var(--white);
+                bottom: -5px;
+                left: 0;
+                transition: width 0.3s;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
+            }
+
+            .nav-link.active {
+                color: var(--pink) !important;
+            }
+
+            /* Sticky Navbar */
+            .navbar.fixed-top {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+                        .nav-link.active {
+                color: var(--pink) !important;
+                font-weight: 600;
+                position: relative;
+            }
+
+            .nav-link.active::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: var(--pink);
+                bottom: -5px;
+                left: 0;
+            }
 
         .hero-section {
             background: linear-gradient(135deg, var(--night-blue), var(--pink));
@@ -62,6 +104,11 @@
         .hero-section h1 {
             font-size: 3rem;
             font-weight: 700;
+        }
+
+        .hero-section .lead {
+            font-size: 1.25rem;
+            margin: 20px 0;
         }
 
         .cta-button {
@@ -81,6 +128,31 @@
             padding: 60px 0;
         }
 
+        .services-section h2, .mission-section h1, .team-section h2, .contact-section h1, .partners-section h3 {
+            color: var(--night-blue);
+            font-weight: 700;
+        }
+
+        .mission-section .buttons .learn-more {
+            background-color: var(--night-blue);
+            color: var(--white);
+        }
+
+        .mission-section .buttons .contact-us {
+            background-color: var(--white);
+            color: var(--night-blue);
+            border: 2px solid var(--night-blue);
+        }
+
+        .contact-section {
+            background-color: var(--night-blue);
+            color: var(--white);
+        }
+
+        .contact-section a {
+            color: var(--pink);
+        }
+
         .footer {
             background-color: var(--night-blue);
             color: var(--white);
@@ -91,7 +163,6 @@
             color: var(--white);
             text-decoration: none;
             margin: 0 10px;
-            transition: color 0.3s;
         }
 
         .footer a:hover {
@@ -124,7 +195,16 @@
             border-radius: 5%;
         }
 
-        /* Additional specific styles can be added here */
+        .partners img {
+            width: 120px;
+            height: auto;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .partners img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
