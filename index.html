@@ -242,6 +242,33 @@
         .partners img:hover {
             transform: scale(1.1);
         }
+        /* Partners Section Styles */
+.partners-section {
+    background-color: var(--white);
+    padding: 60px 0;
+}
+
+.partner-logo {
+    display: inline-block;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-logo img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.partner-logo:hover img {
+    transform: scale(1.05);
+}
     </style>
 </head>
 <body>
@@ -357,18 +384,44 @@
     </section>
 
     <!-- Partners Section -->
-    <section id="partners" class="partners-section py-5 bg-light">
-        <div class="container">
-            <h3 class="text-center mb-4">Nos Partenaires</h3>
-            <div class="row justify-content-center">
+   <!-- Partners Section -->
+<section id="partners" class="partners-section py-5 bg-light">
+    <div class="container">
+        <h3 class="text-center mb-4">Nos Partenaires</h3>
+        <div class="row justify-content-center">
+            <!-- Partenaire 1 -->
+            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                <div class="partner-logo">
                     <img src="../Medtronic.png" alt="Medtronic" class="img-fluid">
+                </div>
+            </div>
+            <!-- Partenaire 2 -->
+            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                <div class="partner-logo">
                     <img src="../Radiometer.png" alt="Radiometer" class="img-fluid">
+                </div>
+            </div>
+            <!-- Partenaire 3 -->
+            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                <div class="partner-logo">
                     <img src="../Genrui.jpg" alt="Genrui" class="img-fluid">
+                </div>
+            </div>
+            <!-- Partenaire 4 -->
+            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                <div class="partner-logo">
                     <img src="../Spinreact.jpg" alt="Spinreact" class="img-fluid">
+                </div>
+            </div>
+            <!-- Partenaire 5 -->
+            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                <div class="partner-logo">
                     <img src="../snibe.png" alt="Snibe" class="img-fluid">
                 </div>
             </div>
-    </section>
+        </div>
+    </div>
+</section>
         <!-- Team Section -->
         <section id="team" class="team-section py-5 bg-light">
             <div class="container">
