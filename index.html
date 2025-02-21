@@ -243,6 +243,25 @@
             border-radius: 5%;
         }
 
+        .carousel-caption {
+    position: absolute;
+    bottom: 20px; /* Ajustez selon vos besoins */
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white); /* Assurez-vous que le texte est lisible */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Ajoutez un fond semi-transparent */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 576px) {
+    .carousel-caption {
+        font-size: 0.8rem; /* Réduisez la taille du texte sur les petits écrans */
+        bottom: 10px; /* Ajustez la position */
+    }
+}
+
         .partners img {
             width: 120px;
             height: auto;
