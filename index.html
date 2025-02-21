@@ -175,6 +175,33 @@
         .services-section, .mission-section, .team-section, .contact-section, .partners-section {
             padding: 60px 0;
         }
+         /* Services Section */
+        .services-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--white), var(--pink));
+        }
+
+        .services-section h2 {
+            color: var(--night-blue);
+            font-weight: 700;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--pink);
+            transition: transform 0.3s;
+        }
+
+        .service-icon:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 576px) {
+            .service-icon {
+                font-size: 2rem;
+            }
+        }
 
         .services-section h2, .mission-section h1, .team-section h2, .contact-section h1, .partners-section h3 {
             color: var(--night-blue);
@@ -401,10 +428,27 @@
     </header>
 
     <!-- Services Section -->
+   <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
-            <h2 class="text-center mb-4">Conçus pour Vous</h2>
-            <p class="text-center mb-5">Explorez nos services innovants, spécialement développés pour répondre à vos besoins médicaux avec précision et efficacité.</p>
+            <h2 class="text-center mb-4">Nos Services</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Diagnostic</h3>
+                    <p>Solutions de diagnostic avancées pour des résultats précis.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="service-icon"><i class="fas fa-syringe"></i></div>
+                    <h3>Traitement</h3>
+                    <p>Traitements innovants pour améliorer la qualité des soins.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="service-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Consultation</h3>
+                    <p>Consultations médicales avec des professionnels qualifiés.</p>
+                </div>
+            </div>
         </div>
     </section>
 
