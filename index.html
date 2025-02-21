@@ -116,6 +116,17 @@
                 bottom: -5px;
                 left: 0;
             }
+        /* Animation on Scroll */
+        .fadeIn {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .fadeIn.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* Hero Section with Parallax */
         .hero-section {
@@ -609,6 +620,27 @@
         window.addEventListener('load', () => {
             const loading = document.getElementById('loading');
             loading.style.display = 'none';
+        });
+
+        // Animation on scroll
+        const sections = document.querySelectorAll('.fadeIn');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
         });
 
     </script>
