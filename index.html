@@ -269,6 +269,45 @@
 .partner-logo:hover img {
     transform: scale(1.05);
 }
+
+        /* Team Section Styles */
+.team-section {
+    background-color: var(--white);
+    padding: 60px 0;
+}
+
+.team-member {
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--night-blue);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-member:hover img {
+    transform: scale(1.05);
+}
+
+.team-member h5 {
+    color: var(--night-blue);
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.team-member p {
+    color: var(--pink);
+    font-weight: 500;
+}
     </style>
 </head>
 <body>
@@ -422,34 +461,46 @@
         </div>
     </div>
 </section>
-        <!-- Team Section -->
-        <section id="team" class="team-section py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-4">Notre Équipe de Direction</h2>
-                <div class="row text-center">
-                    <div class="col-md-3">
-                        <img src="Images/docteur1.jfif" alt="Pierre Dubois" class="img-fluid rounded-circle">
-                        <h5 class="mt-2">Pierre Dubois</h5>
-                        <p>Fondateur / PDG</p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="Images/docteur2.jfif" alt="Sophie Martin" class="img-fluid rounded-circle">
-                        <h5 class="mt-2">Sophie Martin</h5>
-                        <p>Directrice Médicale</p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="Images/docteur3.jfif" alt="Jean Legros" class="img-fluid rounded-circle">
-                        <h5 class="mt-2">Jean Legros</h5>
-                        <p>Responsable des Opérations</p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="Images/docteur4.jfif" alt="Marie Laurent" class="img-fluid rounded-circle">
-                        <h5 class="mt-2">Marie Laurent</h5><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <p>CTO</p>
-                    </div>
+       <!-- Team Section -->
+<section id="team" class="team-section py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Notre Équipe de Direction</h2>
+        <div class="row text-center">
+            <!-- Membre 1 -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <div class="team-member">
+                    <img src="Images/docteur1.jfif" alt="Pierre Dubois" class="img-fluid rounded-circle">
+                    <h5 class="mt-2">Pierre Dubois</h5>
+                    <p>Fondateur / PDG</p>
                 </div>
             </div>
-        </section>
+            <!-- Membre 2 -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <div class="team-member">
+                    <img src="Images/docteur2.jfif" alt="Sophie Martin" class="img-fluid rounded-circle">
+                    <h5 class="mt-2">Sophie Martin</h5>
+                    <p>Directrice Médicale</p>
+                </div>
+            </div>
+            <!-- Membre 3 -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <div class="team-member">
+                    <img src="Images/docteur3.jfif" alt="Jean Legros" class="img-fluid rounded-circle">
+                    <h5 class="mt-2">Jean Legros</h5>
+                    <p>Responsable des Opérations</p>
+                </div>
+            </div>
+            <!-- Membre 4 -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <div class="team-member">
+                    <img src="Images/docteur4.jfif" alt="Marie Laurent" class="img-fluid rounded-circle">
+                    <h5 class="mt-2">Marie Laurent</h5>
+                    <p>CTO</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section py-5">
