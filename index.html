@@ -390,6 +390,26 @@
 .circle:hover {
     transform: scale(1.1);
 }
+        blockquote {
+    font-style: italic;
+    margin: 15px 0;
+    color: var(--night-blue);
+}
+
+blockquote footer {
+    font-weight: bold;
+    color: var(--pink);
+}
+
+#blog h5 {
+    color: var(--night-blue);
+}
+
+#video iframe {
+    max-width: 100%;
+    height: auto;
+    border: none;
+}        
     </style>
 </head>
 <body>
@@ -638,6 +658,40 @@
         </div>
     </div>
 </section>
+             <!-- Testimonials-->
+    <section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Témoignages de Clients</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <blockquote>
+                    <p>"Un service exceptionnel et des soins de qualité!"</p>
+                    <footer>- Client 1</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4 text-center">
+                <blockquote>
+                    <p>"Je recommande fortement Technologie Médicale SARL!"</p>
+                    <footer>- Client 2</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4 text-center">
+                <blockquote>
+                    <p>"Une équipe professionnelle et attentive."</p>
+                    <footer>- Client 3</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+                    <!-- presentation video-->
+    <section id="video" class="py-5">
+    <div class="container text-center">
+        <h2>Présentation Vidéo</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/your_video_id" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+    
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section py-5">
