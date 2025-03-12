@@ -488,7 +488,7 @@
     <div class="container text-center">
         <h2>Diagnostic</h2>
         <p>Nous offrons des solutions de diagnostic avancées, y compris des tests sanguins, des analyses d'imagerie et des évaluations cliniques complètes.</p>
-        <div class="circle" data-target="1500">Diagnostics Proposés</div>
+        <div class="circle" data-target="1500">0</div>
     </div>
 </section>
 
@@ -496,7 +496,7 @@
     <div class="container text-center">
         <h2>Traitement</h2>
         <p>Nos traitements incluent des thérapies ciblées, des procédures chirurgicales et un suivi régulier pour garantir l'efficacité des soins.</p>
-        <div class="circle" data-target="3000">Traitements Réalisés</div>
+        <div class="circle" data-target="3000">0</div>
     </div>
 </section>
 
@@ -504,7 +504,7 @@
     <div class="container text-center">
         <h2>Consultation</h2>
         <p>Nos consultations médicales sont disponibles avec un large éventail de spécialistes pour répondre à vos besoins de santé.</p>
-        <div class="circle" data-target="2000">Consultations par An</div>
+        <div class="circle" data-target="2000">0</div>
     </div>
 </section>
 
@@ -782,6 +782,40 @@
         };
 
         updateCount();
+    });
+
+        const circles = document.querySelectorAll('.circle');
+
+    circles.forEach(circle => {
+        const target = +circle.getAttribute('data-target');
+        let count = 0;
+        const speed = 200; // Durée pour atteindre le nombre final
+        let isAnimating = false; // Pour éviter de redémarrer l'animation
+
+        const updateCount = () => {
+            const increment = target / speed; // Calcul de l'incrément
+            
+            if (count < target) {
+                count += increment;
+                circle.textContent = Math.ceil(count);
+                setTimeout(updateCount, 1);
+            } else {
+                circle.textContent = target; // Assurer que le nombre final est correct
+            }
+        };
+
+        circle.parentElement.parentElement.addEventListener('mouseover', () => {
+            if (!isAnimating) {
+                isAnimating = true; // Marquer comme en cours d'animation
+                count = 0; // Réinitialiser le compteur
+                updateCount(); // Démarrer l'animation
+            }
+        });
+
+        circle.parentElement.parentElement.addEventListener('mouseout', () => {
+            isAnimating = false; // Réinitialiser l'animation lorsque la souris sort
+            circle.textContent = '0'; // Réinitialiser le texte à 0
+        });
     });
 
     </script>
