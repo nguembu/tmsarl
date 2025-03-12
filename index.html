@@ -371,6 +371,25 @@
     color: var(--pink);
     font-weight: 500;
 }
+        .circle {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--pink);
+    color: var(--white);
+    line-height: 100px; /* Centrer le texte verticalement */
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.circle:hover {
+    transform: scale(1.1);
+}
     </style>
 </head>
 <body>
@@ -464,24 +483,28 @@
 </section>
 
 <!-- Sous-sections -->
+<!-- Sous-sections -->
 <section id="diagnostic" class="py-5 bg-light fadeIn">
-    <div class="container">
+    <div class="container text-center">
         <h2>Diagnostic</h2>
         <p>Nous offrons des solutions de diagnostic avancées, y compris des tests sanguins, des analyses d'imagerie et des évaluations cliniques complètes.</p>
+        <div class="circle" data-target="1500">Diagnostics Proposés</div>
     </div>
 </section>
 
 <section id="traitement" class="py-5 bg-light fadeIn">
-    <div class="container">
+    <div class="container text-center">
         <h2>Traitement</h2>
         <p>Nos traitements incluent des thérapies ciblées, des procédures chirurgicales et un suivi régulier pour garantir l'efficacité des soins.</p>
+        <div class="circle" data-target="3000">Traitements Réalisés</div>
     </div>
 </section>
 
 <section id="consultation" class="py-5 bg-light fadeIn">
-    <div class="container">
+    <div class="container text-center">
         <h2>Consultation</h2>
         <p>Nos consultations médicales sont disponibles avec un large éventail de spécialistes pour répondre à vos besoins de santé.</p>
+        <div class="circle" data-target="2000">Consultations par An</div>
     </div>
 </section>
 
@@ -740,6 +763,26 @@
         sections.forEach(section => {
             observer.observe(section);
         });
+
+        document.querySelectorAll('.circle').forEach(circle => {
+        const target = +circle.getAttribute('data-target');
+        let count = 0;
+        const speed = 200; // Durée pour atteindre le nombre final
+
+        const updateCount = () => {
+            const increment = target / speed; // Calcul de l'incrément
+            
+            if (count < target) {
+                count += increment;
+                circle.textContent = Math.ceil(count);
+                setTimeout(updateCount, 1);
+            } else {
+                circle.textContent = target; // S'assurer que le nombre final est correct
+            }
+        };
+
+        updateCount();
+    });
 
     </script>
 
